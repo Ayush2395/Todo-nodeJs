@@ -4,6 +4,20 @@
   <body>
     <!-- navbar -->
     <%- include('./components/navbar.ejs') %>
-    <h1 class="container display">Home page</h1>
+    <div class="container" style="min-height: 100vh">
+      <div class="row justify-content-center align-items-center">
+        <div class="col">
+          <img
+            src="https://images.secretlab.co/theme/common/collab_pokemon_catalog_charizard-min.png"
+            alt="charizard Pokemon"
+            class="img"
+          />
+        </div>
+        <div class="col">
+          <h1 class="displ">Pokemon world</h1>
+          <a href="/pokemon" class="btn btn-success">Catch it</a>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

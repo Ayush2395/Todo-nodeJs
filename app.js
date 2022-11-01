@@ -4,6 +4,7 @@ const app = express();
 const port = 3000;
 const mongoose = require("mongoose");
 const cookiParser = require("cookie-parser");
+const { requireAuth } = require("./middleware/authMiddleware");
 
 // middleware
 app.use(express.urlencoded({ extended: true }));
@@ -25,6 +26,9 @@ db.once("open", () => console.log("Database connected"));
 // main route
 app.get("/", (req, res) => {
   res.render("index", { title: "Todos" });
+});
+app.get("/pokemon", requireAuth, (req, res) => {
+  res.render("pokemon", { title: "Pokemon" });
 });
 
 // auth routes
